@@ -1,0 +1,126 @@
+@import 'fonts';
+@import 'vars';
+// ====================
+/* 
+%OpenSans-Regular-400{
+    font-family: 'OpenSans-Regular';
+    font-weight: 400;
+}
+%OpenSans-Italic-400{
+    font-family: 'OpenSans-Italic';
+    font-weight: 400;
+}
+%OpenSans-BoldItalic-500{
+    font-family: 'OpenSans-BoldItalic';
+    font-weight: 500;
+}
+ */
+// @extend %OpenSans-Regular-400;
+// ====================
+
+html{
+    box-sizing: border-box;      
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+button{
+    padding: 0;
+}
+p{
+    margin: 0;
+}
+body{
+    min-width: 320px;
+    overflow-x: hidden;    
+    font-family: 'OpenSans-Regular','Arial', 'sans-serif';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+}
+.container{
+    padding: 0 20px;
+}
+header{
+    min-height: 56px;
+    margin-bottom: 1px;
+}
+.head{
+    min-height: 400px;
+    //background-image: url("../images/bg-head.jpg");
+    background: linear-gradient(180deg, #2B4074 0%, rgba(43, 64, 116, 0) 100%);
+    text-align: center;    
+    &__img{
+        margin-top: 10px;
+        width: 100%;
+    }    
+    &__title{
+        @extend %OpenSans-BoldItalic-500;
+        color: $accent;
+        font-size: 20px;
+        line-height: 25px;            
+        margin: 10px 0 10px;
+        //max-width: 520px;
+        text-align: left;
+        position: relative;
+        padding-bottom: 28px;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 8px;
+            background-color: $accent;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+    }
+    &__text-title{
+        text-align: left;
+        padding: 20px 0 20px 0;
+    }
+    &__text-content{
+        @extend %OpenSans-Regular-400;
+        color: $text-color;
+        text-align: center;
+        width: 200px;
+        margin: auto;
+        font-size: 18;
+        line-height: 25px;
+    }
+}
+@media(min-width: 768px){
+    .head{
+        min-height: 400px;
+        &__inner{
+            display: flex;
+        }               
+        &__img{            
+            max-width: 250px;
+        }    
+        &__title{           
+            color: $accent;
+            font-size: 20px;
+            line-height: 25px;            
+            margin: 10px 0 10px;
+            //max-width: 520px;
+            text-align: left;
+        }
+        &__text{            
+            color: $text-color;
+            text-align: center;
+            width: 200px;
+            margin: auto;
+        }
+    }
+}
+
